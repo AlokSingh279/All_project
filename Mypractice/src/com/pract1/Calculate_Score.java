@@ -1,0 +1,42 @@
+package com.pract1;
+
+public class Calculate_Score {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		String[] instructions = { "jump","add","add" };
+		int[] values = {3,1,1};
+		// Output: 1
+		System.out.println(calculateScore(instructions, values));
+
+	}
+
+	public static long calculateScore(String[] instructions, int[] values) {
+
+		long ans = 0;
+		for (int i = 0; i < instructions.length; i++) {
+
+			for (int j = i; j < values.length; j++) {
+
+				if (instructions[i] == "jump") {
+
+					i = i + values[j];
+					if (i > 0) {
+						i--;
+					}
+
+					break;
+				} else {
+					ans = ans + values[j];
+					if (i > ans) {
+						return ans;
+					}
+					break;
+				}
+			}
+		}
+		return ans;
+
+	}
+
+}

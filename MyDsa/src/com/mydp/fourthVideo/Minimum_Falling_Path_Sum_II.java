@@ -1,0 +1,47 @@
+package com.mydp.fourthVideo;
+
+import java.util.Arrays;
+
+public class Minimum_Falling_Path_Sum_II {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int[][] grid = { { 1, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 } };
+
+		int[][] dp = new int[grid.length][grid[0].length];
+		for (int[] a : dp) {
+			Arrays.fill(a, -1);
+		}
+		int sum = Integer.MAX_VALUE;
+		for (int i = 0; i < grid[0].length; i++) {// sirf row ka min pucha hai question me isliye row ka ans nikal rahe
+													// min leke
+			sum = Math.min(sum, minFallingPathSumm(grid, 0, i, dp));
+		}
+		System.out.println(sum);
+
+	}
+
+	public static int minFallingPathSumm(int[][] grid, int i, int col, int[][] dp) {
+
+		if (col < 0 || col >= grid[0].length) {// col bahar jaye toh matrix se uske liye
+			return Integer.MAX_VALUE;
+		}
+
+		if (i == grid.length - 1) {// last row touch hotre hi ans lenge
+			return grid[i][col];
+		}
+
+		if (dp[i][col] != -1) {
+			return dp[i][col];
+		}
+
+		int sum = Integer.MAX_VALUE;
+		for (int j = 0; j < grid[0].length; j++) {
+			if (j != col) {// adjacent column ko skip karna hai isliye
+				sum = Math.min(sum, minFallingPathSumm(grid, i + 1, j, dp));// sabhi row col ka nikal rahe hai min
+			}
+		}
+		return dp[i][col] = grid[i][col] + sum;
+	}
+
+}

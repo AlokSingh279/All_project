@@ -1,0 +1,30 @@
+package com.mydp.secondVideoPartOneAndPart2;
+
+public class knapsack_0rder_of_one {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int capacity = 8;
+		int[] weight = { 1, 4, 2, 3, 6 };
+		int[] value = { 1, 1, 7, 9, 1 };
+		System.out.println(knapsack(capacity, weight, value, 0));
+
+	}
+
+	public static int knapsack(int capacity, int[] weight, int[] value, int i) {
+
+		if (capacity == 0 || i == weight.length) {
+			return 0;
+		}
+
+		int inc = 0;
+		int exc = 0;
+
+		if (capacity >= weight[i]) {
+			inc = value[i] + knapsack(capacity - weight[i], weight, value, i + 1);
+		}
+		exc = knapsack(capacity, weight, value, i + 1);
+		return Math.max(inc, exc);
+	}
+
+}

@@ -1,0 +1,10 @@
+package com.pract1;
+
+public class Equal_Sum_Grid_Partition_I {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

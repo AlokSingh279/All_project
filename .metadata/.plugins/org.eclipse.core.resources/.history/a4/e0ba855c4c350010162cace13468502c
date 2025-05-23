@@ -1,0 +1,20 @@
+package com.pract1;
+
+public class Minimum_Operations_to_Convert_All_Elements_to_Zero {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int[] nums = {};
+		System.out.println(minOperations(nums));
+
+	}
+
+	public static int minOperations(int[] nums) {
+
+		for (int i = 0; i < nums.length; i++) {
+			for (int j = 0; j < nums.length; j++) {
+
+			}
+		}
+	}
+}

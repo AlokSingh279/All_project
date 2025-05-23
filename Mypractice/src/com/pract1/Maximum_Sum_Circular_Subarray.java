@@ -1,0 +1,45 @@
+package com.pract1;
+
+public class Maximum_Sum_Circular_Subarray {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int[] nums = { -3, -2, -3 };// 10
+		System.out.println(maxSubarraySumCircular(nums));
+	}
+
+	public static int maxSubarraySumCircular(int[] nums) {
+
+		int linear_Kadane = maxSubArray(nums);
+		int sum = 0;
+		for (int i = 0; i < nums.length; i++) {
+			sum += nums[i];
+			nums[i] = nums[i] * -1;
+		}
+
+		int inverted_Kdane = maxSubArray(nums);// 12
+		int circular_kadane = inverted_Kdane + sum;// 12+3=15
+		if (circular_kadane == 0) {// in leetcode for testcase 3 this is important if
+			return linear_Kadane;
+		}
+		return Math.max(circular_kadane, linear_Kadane);// 15,13=15 ans
+
+	}
+
+	public static int maxSubArray(int[] nums) {
+
+		int ans = Integer.MIN_VALUE;
+		int prevSum = 0;
+		for (int i = 0; i < nums.length; i++) {
+
+			prevSum = prevSum + nums[i];
+			ans = Math.max(ans, prevSum);
+
+			if (prevSum < 0) {
+				prevSum = 0;
+			}
+		}
+		return ans;
+	}
+
+}

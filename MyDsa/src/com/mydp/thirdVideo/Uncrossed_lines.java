@@ -1,0 +1,46 @@
+package com.mydp.thirdVideo;
+
+import java.util.Arrays;
+
+public class Uncrossed_lines {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int[] nums1 = { 1, 4, 2 }, nums2 = { 1, 2, 4 };// same as lcs dicto only string given as no
+		int[][] dp = new int[nums1.length][nums2.length];
+		for (int[] a : dp) {
+			Arrays.fill(a, -1);
+		}
+		System.out.println(longestCommonSubsequencee(nums1, nums2, 0, 0, dp));
+
+	}
+
+	public static int longestCommonSubsequencee(int[] nums1, int[] nums2, int i, int j, int[][] dp) {
+		int ans = 0;
+		if (i == nums1.length) {
+			return 0;
+		}
+
+		if (j == nums2.length) {
+			return 0;
+		}
+
+		if (dp[i][j] != -1) {
+			return dp[i][j];
+		}
+
+		int inc = 0;
+		int exc = 0;
+
+		if (nums1[i] == nums2[j]) {
+			ans = 1 + longestCommonSubsequencee(nums1, nums2, i + 1, j + 1, dp);
+		}
+
+		inc = longestCommonSubsequencee(nums1, nums2, i + 1, j, dp);
+		exc = longestCommonSubsequencee(nums1, nums2, i, j + 1, dp);
+
+		return dp[i][j] = Math.max(ans, Math.max(inc, exc));
+
+	}
+
+}

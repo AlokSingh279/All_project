@@ -1,0 +1,14 @@
+package com.pract1;
+
+public class Smallest_index_with_digit {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+	public static int smallestIndex(int[] nums) {
+
+	}
+
+}

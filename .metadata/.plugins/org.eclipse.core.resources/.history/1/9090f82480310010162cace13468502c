@@ -1,0 +1,12 @@
+package com.mydp.fourthVideo;
+
+public class wine_problem {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int[] nums = { 2, 3, 5, 1, 4 };
+
+	}
+
+	
+}

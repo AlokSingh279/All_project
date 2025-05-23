@@ -1,0 +1,19 @@
+package com.pract1;
+
+public class Min_deletion {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		String s = "abc";//1
+		int k = 2;
+		System.out.println(minDeletion(s, k));
+
+	}
+
+	public static int minDeletion(String s, int k) {
+		
+		
+
+	}
+
+}

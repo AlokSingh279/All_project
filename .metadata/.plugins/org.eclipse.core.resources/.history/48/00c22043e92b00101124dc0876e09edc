@@ -1,0 +1,47 @@
+package com.mydp.firstVideo;
+
+public class fibonacci {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int n = 45;
+		int[] dp = new int[n + 1];
+		System.out.println(fibo(n, dp));
+
+	}
+
+	public static int fibo(int n, int[] dp) {// top down approach
+
+		if (n == 0 || n == 1) {
+			return n;
+		}
+
+		if (dp[n] != 0) {
+			return dp[n];
+		}
+
+		int fibo1 = fibo(n - 1, dp);
+		int fibo2 = fibo(n - 2, dp);
+
+		dp[n] = fibo1 + fibo2;
+		return fibo1 + fibo2;
+	}
+
+	public static int fibo(int n, int[] dp) {// bottom up approach
+
+		if (n == 0 || n == 1) {
+			return n;
+		}
+
+		if (dp[n] != 0) {
+			return dp[n];
+		}
+
+		int fibo1 = fibo(n - 1, dp);
+		int fibo2 = fibo(n - 2, dp);
+
+		dp[n] = fibo1 + fibo2;
+		return fibo1 + fibo2;
+	}
+
+}

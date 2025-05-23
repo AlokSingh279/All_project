@@ -1,0 +1,30 @@
+package com.pract1;
+
+public class Smallest_index_with_digit {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		// int[] nums = { 1, 3, 2 };// output 2
+		int n = 23;
+		System.out.println(helper(n));
+
+	}
+
+//	public static int smallestIndex(int[] nums) {
+//
+//		return 0;
+//
+//	}
+
+	public static int helper(int n) {
+
+		int sum = 0;
+		while (n > 0) {
+			int div = n % 10;
+			sum = sum + div;
+			n = n / 10;
+		}
+		return sum;
+	}
+
+}

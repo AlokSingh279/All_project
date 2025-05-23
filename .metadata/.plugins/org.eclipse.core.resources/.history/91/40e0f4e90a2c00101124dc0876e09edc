@@ -1,0 +1,22 @@
+package com.mydp.firstVideo;
+
+public class climbing_Stairs {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int n = 2;
+		System.out.println(stairsclimbing(n, 0));
+
+	}
+
+	public static void stairsclimbing(int n, int i, int count) {
+		if (n == 0) {
+			System.out.println(count);
+		}
+
+		stairsclimbing(n, i + 1, count + 1);
+		stairsclimbing(n, i + 2, count + 1);
+
+	}
+
+}

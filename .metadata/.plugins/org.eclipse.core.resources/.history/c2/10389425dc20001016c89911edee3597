@@ -1,0 +1,39 @@
+package com.pract1;
+
+public class Make_Array_Non_decreasing {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int[] nums = { 4, 2, 5, 3, 5 }; // output 3
+
+	}
+
+	public static int maximumPossibleSize(int[] nums) {
+
+		int count = 1;
+		int n = nums.length;
+		for (int i = 1; i < nums.length - 1; i++) {
+
+			for (int j = i; j < nums.length - 1; j++) {
+
+				if (nums[j] < nums[j - 1] && nums[j] < nums[j + 1]) {
+
+					int temp = nums[j];
+					nums[j] = nums[j + 1];
+					nums[j + 1] = temp;
+				}
+			}
+
+		}
+
+		for (int i = 1; i < nums.length; i++) {
+
+			if (nums[i] >= nums[i - 1]) {
+				count++;
+			}
+		}
+
+		return count;
+	}
+
+}

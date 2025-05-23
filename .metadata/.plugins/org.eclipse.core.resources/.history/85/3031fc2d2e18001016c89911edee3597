@@ -1,0 +1,12 @@
+package com.pract1;
+
+public class Minimum_Operations_to_Make_Array_Sum_Divisible_by_K {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int[] nums = { 3, 9, 7 };       //output= 4
+		int k = 5;
+
+	}
+
+}

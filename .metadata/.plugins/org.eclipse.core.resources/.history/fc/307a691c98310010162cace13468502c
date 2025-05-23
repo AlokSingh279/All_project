@@ -1,0 +1,45 @@
+package com.mydp.fifthVideo;
+
+public class Lis_n_log_n {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int[] nums = { 0, 1, 0, 3, 2, 3 };// 4
+		System.out.println(lengthOfLISSS(nums));
+
+	}
+
+	public static int lengthOfLISSS(int[] nums) {
+
+		int[] ans = new int[nums.length];
+		ans[0] = nums[0];
+		int len = 1;
+		for (int i = 1; i < nums.length; i++) {
+			if (nums[i] > ans[len - 1]) {
+				ans[len] = nums[i];
+				len++;
+			} else {
+				int idx = BinarySearch(ans, 0, len - 1, nums[i]);
+				ans[idx] = nums[i];
+			}
+		}
+		return len;
+	}
+
+	private static int BinarySearch(int[] ans, int lo, int hi, int item) {
+		int idx = 0;
+		while (lo <= hi) {
+			int mid = (lo + hi) / 2;
+
+			if (ans[mid] == item) {
+				idx = mid;
+				hi = mid - 1;
+			} else {
+				lo = mid + 1;
+			}
+		}
+
+		return 0;
+	}
+
+}

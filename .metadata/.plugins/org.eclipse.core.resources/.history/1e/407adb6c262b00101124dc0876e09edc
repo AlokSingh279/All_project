@@ -1,0 +1,22 @@
+package com.coding.myjava8;
+
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collector;
+import java.util.stream.Collectors;
+
+public class Even_no {
+
+	public static void main(String[] args) {
+
+		// even no
+//		List<Integer> list = Arrays.asList(10, 15, 8, 49, 25, 98, 32);
+//		List<Integer> collect = list.stream().filter(x -> x % 2 == 0).collect(Collectors.toList());
+//		System.out.println(collect);
+
+		List<Integer> list = Arrays.asList(10, 15, 8, 49, 25, 98, 32);
+		List<String> collect = list.stream().map(x -> x + "").filter(x -> x.startsWith("1"))
+				.collect(Collectors.toList());
+		System.out.println(collect);
+	}
+}

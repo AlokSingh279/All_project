@@ -1,0 +1,41 @@
+package com.mydp.thirdVideo;
+
+import java.util.Arrays;
+
+public class valentine_magic_Hacker_block {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int[] arr = { 2, 11, 3 };
+		int[] nums = { 5, 7, 3, 2 };
+		int[][] dp = new int[arr.length][nums.length];
+		for (int[] a : dp) {
+			Arrays.fill(a, -1);
+		}
+		Arrays.sort(arr);
+		Arrays.sort(nums);
+		System.out.println(valentine_magic(arr, nums, 0, 0, dp));
+
+	}
+
+	public static int valentine_magic(int[] arr, int[] nums, int i, int j, int[][] dp) {
+
+		if (i == arr.length) {
+			return 0;
+		}
+
+		if (j == nums.length) {
+			return 100000;
+		}
+
+		if (dp[i][j] != -1) {
+			return dp[i][j];
+		}
+
+		int a = Math.abs(arr[i] - nums[j]) + valentine_magic(arr, nums, i + 1, j + 1, dp);
+		int b = valentine_magic(arr, nums, i, j + 1, dp);
+
+		return dp[i][j] = Math.min(a, b);
+	}
+
+}

@@ -1,0 +1,10 @@
+package com.mydp.thirdVideo;
+
+public class Edit_distance_spoj_question {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

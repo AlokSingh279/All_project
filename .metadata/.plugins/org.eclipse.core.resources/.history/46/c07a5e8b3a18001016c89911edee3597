@@ -1,0 +1,37 @@
+package com.pract1;
+
+public class Minimum_Operations_to_Make_Array_Sum_Divisible_by_K {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int[] nums = { 3, 9, 7 }; // output= 4
+		int k = 5;
+		System.out.println(minOperations(nums, k));
+
+	}
+
+	public static int minOperations(int[] nums, int k) {
+
+		int sum = 0;
+		for (int i = 0; i < nums.length; i++) {
+			sum += nums[i];
+		}
+
+		int ans = sum;
+
+		if (ans % k == 0) {
+			return 0;
+		} else if (ans % k <= k) {
+			return ans;
+		} else {
+
+			ans = ans % k;
+			sum -= ans;
+			if (sum % k == 0) {
+				return ans;
+			}
+		}
+		return 0;
+	}
+
+}

@@ -1,0 +1,13 @@
+package com.mydp.secondVideoPartOneAndPart2;
+
+public class knapsack_0rder_of_one {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int capacity = 4;
+		int[] weight = {};
+		int[] value = {};
+
+	}
+
+}

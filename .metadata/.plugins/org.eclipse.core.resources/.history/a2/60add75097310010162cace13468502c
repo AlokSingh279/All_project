@@ -1,0 +1,15 @@
+package com.mydp.fifthVideo;
+
+public class Lis_n_log_n {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int[] nums = { 0, 1, 0, 3, 2, 3 };// 4
+
+	}
+
+	public int lengthOfLISSS(int[] nums) {
+
+	}
+
+}

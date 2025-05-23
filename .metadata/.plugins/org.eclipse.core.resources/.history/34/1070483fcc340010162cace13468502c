@@ -1,0 +1,14 @@
+package com.pract1;
+
+public class Find_Most_Frequent_Vowel_and_Consonant {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		String s = "successes";
+
+	}
+
+	public static int maxFreqSum(String s) {
+
+	}
+}

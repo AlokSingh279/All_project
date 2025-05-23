@@ -1,0 +1,10 @@
+package com.pract1;
+
+public class Minimum_Operations_to_Convert_All_Elements_to_Zero {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

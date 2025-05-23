@@ -1,0 +1,15 @@
+package com.mydp.secondVideoPartOneAndPart2;
+
+public class Distinct_Subsequences {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		String s = "rabbbit", t = "rabbit";
+
+	}
+
+	public static int numDistinct(String s, String t) {
+
+	}
+
+}

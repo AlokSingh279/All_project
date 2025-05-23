@@ -1,0 +1,43 @@
+package com.pract1;
+
+import java.util.HashMap;
+
+public class Find_Most_Frequent_Vowel_and_Consonant {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		String s = "successes";// 6
+		System.out.println(maxFreqSum(s));
+
+	}
+
+	public static int maxFreqSum(String s) {
+
+		HashMap<Character, Integer> map = new HashMap<>();
+		for (int i = 0; i < s.length(); i++) {
+			char c = s.charAt(i);
+			map.put(c, map.getOrDefault(c, 0) + 1);
+		}
+
+		int count = 0;
+		int sum = 0;
+		for (int i = 0; i < s.length(); i++) {
+
+			char c = s.charAt(i);
+			if (isVowels(c)) {
+				count = Math.max(count, map.get(c));
+			} else {
+				sum = Math.max(sum, map.get(c));
+			}
+		}
+
+	}
+
+	public static boolean isVowels(char c) {
+
+		if (c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u') {
+			return true;
+		}
+		return false;
+	}
+}

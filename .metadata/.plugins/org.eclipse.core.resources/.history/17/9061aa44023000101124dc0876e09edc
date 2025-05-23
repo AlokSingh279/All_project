@@ -1,0 +1,23 @@
+package com.mydp.thirdVideo;
+
+import java.util.Arrays;
+
+public class valentine_magic_Hacker_block {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int[] arr = { 2, 11, 3 };
+		int[] nums = { 5, 7, 3, 2 };
+		int[][] dp = new int[arr.length][nums.length];
+		for (int[] a : dp) {
+			Arrays.fill(a, -1);
+		}
+		Arrays.sort(arr);
+		Arrays.sort(nums);
+	}
+
+	public static int valentine_magic(int[] arr, int[] nums, int i, int j) {
+
+	}
+
+}

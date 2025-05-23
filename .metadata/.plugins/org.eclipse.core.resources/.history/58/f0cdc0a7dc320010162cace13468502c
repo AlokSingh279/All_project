@@ -1,0 +1,16 @@
+package com.pract1;
+
+public class Equal_Sum_Grid_Partition_I {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int[][] grid = { { 1, 4 }, { 2, 3 } }; // output =true
+		System.out.println(canPartitionGrid(grid));
+
+	}
+
+	public static boolean canPartitionGrid(int[][] grid) {
+
+	}
+
+}

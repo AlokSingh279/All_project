@@ -1,0 +1,33 @@
+package com.mydp.secondVideoPartOneAndPart2;
+
+public class coin_Change_Two {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int amount = 5;
+		int[] coins = { 1, 2, 5 };// output 4
+
+	}
+
+	public static int change(int amount, int[] coins, int i) {
+
+		if (amount == 0) {
+			return 1;
+		}
+
+		if (i == coins.length) {
+			return 0;
+		}
+		int inc = 0;
+
+		if (amount >= coins[i]) {
+			inc = change(amount - coins[i], coins, i);
+		}
+
+		int exc = change(amount, coins, i + 1);
+
+		return inc + exc;
+
+	}
+
+}

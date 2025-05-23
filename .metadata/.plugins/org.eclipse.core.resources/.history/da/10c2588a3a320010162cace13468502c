@@ -1,0 +1,11 @@
+package com.mydp.fifthVideo;
+
+public class Mcm {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int[] nums = { 4, 2, 3, 5, 1 };// output
+
+	}
+
+}

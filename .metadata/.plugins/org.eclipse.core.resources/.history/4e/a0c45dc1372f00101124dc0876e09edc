@@ -1,0 +1,20 @@
+package com.mydp.thirdVideo;
+
+public class Lcs {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		String text1 = "abcde", text2 = "ace"; // output 3
+
+	}
+
+	public static int longestCommonSubsequence(String text1, String text2, int i, int j) {
+
+		if (text1.charAt(i) == text2.charAt(j)) {
+			longestCommonSubsequence(text1, text2, i + 1, j + 1);
+		}
+
+		longestCommonSubsequence(text1, text2, i + 1, j);
+	}
+
+}

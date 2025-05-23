@@ -1,0 +1,111 @@
+package com.pract1;
+
+public class Get_the_Maximum_Score {
+
+	public static void main(String[] args) {
+		int[] nums = { 2, 4, 5, 8, 10 };
+		int[] arr = { 4, 6, 8, 9 };// 30
+		System.out.println(maxSum(nums, arr));
+
+	}
+
+	public static int maxSum(int[] nums1, int[] nums2) {
+
+		int i = 0;
+		int j = 0;
+		int p = 0;
+		int q = 0;
+		int ans = 0;
+
+		while (i < nums1.length && j < nums2.length) {
+			if (nums1[i] < nums2[j]) {
+				i++;
+			} else if (nums1[i] > nums2[j]) {
+				j++;
+			} else {
+				int sum1 = 0;
+				int sum2 = 0;
+				for (int k = p; k <= i; k++) {
+
+					sum1 = sum1 + nums1[k];
+				}
+
+				for (int k = q; k <= j; k++) {
+					sum2 = sum2 + nums2[k];
+				}
+
+				ans = ans + Math.max(sum1, sum2);
+				i++;
+				j++;
+				p = i;
+				q = j;
+
+			}
+		}
+
+		if (i == nums1.length) {
+			for (int k = q; k < nums2.length; k++) {
+				ans = ans + nums2[k];
+			}
+		}
+
+		if (j == nums2.length) {
+			for (int k = p; k < nums1.length; k++) {
+				ans = ans + nums1[k];
+			}
+		}
+		return ans;
+	}
+}
+
+/*
+ 
+     public static int maxSumm(int[] nums1, int[] nums2) {
+
+		int i = 0;
+		int j = 0;
+		int p = 0;
+		int q = 0;
+		long ans = 0;
+        final int MOD = 1_000_000_007;
+
+		while (i < nums1.length && j < nums2.length) {
+			if (nums1[i] < nums2[j]) {
+				i++;
+			} else if (nums1[i] > nums2[j]) {
+				j++;
+			} else {
+				long sum1 = 0;
+				long sum2 = 0;
+				for (int k = p; k <= i; k++) {
+
+					sum1 = sum1 + nums1[k];
+				}
+
+				for (int k = q; k <= j; k++) {
+					sum2 = sum2 + nums2[k];
+				}
+
+				ans = ans + Math.max(sum1, sum2);
+				i++;
+				j++;
+				p = i;
+				q = j;
+
+			}
+		}
+
+	    long rem1 = 0;
+        for (int k = p; k < nums1.length; k++) rem1 += nums1[k];
+        long rem2 = 0;
+        for (int k = q; k < nums2.length; k++) rem2 += nums2[k];
+
+        ans += Math.max(rem1, rem2);
+
+        return (int)(ans % MOD);
+
+	}
+
+ 
+ 
+ */

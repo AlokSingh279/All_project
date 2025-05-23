@@ -1,0 +1,17 @@
+package com.mydp.thirdVideo;
+
+public class Edit_distance_spoj_question {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		String s1 = "FOOD";
+		String s2 = "MONEY";
+
+	}
+
+	public static int Edit_distance(String s1, String s2, int i, int j) {
+
+		
+	}
+
+}

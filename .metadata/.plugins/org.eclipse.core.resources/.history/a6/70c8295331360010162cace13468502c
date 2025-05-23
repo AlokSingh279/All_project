@@ -1,0 +1,13 @@
+package com.pract1;
+
+public class Get_the_Maximum_Score {
+
+	public static void main(String[] args) {
+		int[] nums = { 2, 4, 5, 8, 10 }, arr = { 4, 6, 8, 9 };// 30
+
+	}
+
+	public static int maxSum(int[] nums1, int[] nums2) {
+
+	}
+}

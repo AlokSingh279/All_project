@@ -1,0 +1,36 @@
+package com.mydp.fourthVideo;
+
+public class Minimum_Falling_Path_Sum_II {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int[][] grid = { { 1, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 } };
+		int sum = Integer.MAX_VALUE;
+		for (int i = 0; i < grid[0].length; i++) {// sirf row ka min pucha hai question me isliye row ka ans nikal rahe
+													// min leke
+			sum = Math.min(sum, minFallingPathSum(grid, 0, i));
+		}
+		System.out.println(sum);
+
+	}
+
+	public static int minFallingPathSum(int[][] grid, int i, int col) {
+
+		if (col < 0 || col >= grid[0].length) {
+			return Integer.MAX_VALUE;
+		}
+
+		if (i == grid.length - 1) {
+			return grid[i][col];
+		}
+
+		int sum = Integer.MAX_VALUE;
+		for (int j = 0; j < grid[0].length; j++) {
+			if (j != col) {// adjacent column ko skip karna hai isliye
+				sum = Math.min(sum, minFallingPathSum(grid, i + 1, j));// sabhi row col ka nikal rahe hai min
+			}
+		}
+		return grid[i][col] + sum;
+	}
+
+}

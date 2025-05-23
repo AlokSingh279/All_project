@@ -1,0 +1,35 @@
+package com.mydp.firstVideo;
+
+public class Min_Cost_Climbing_Stairs {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int[] arr = { 10, 15, 20 };
+		// System.out.println(minCostClimbingStairs(arr, 1));
+		System.out.println(helper(arr, 0));
+
+	}
+
+	public static int helper(int[] arr, int i) {
+
+		int a = minCostClimbingStairs(arr, 0);
+		int b = minCostClimbingStairs(arr, 1);
+
+		return Math.min(a, b);
+
+	}
+
+	public static int minCostClimbingStairs(int[] cost, int i) {
+
+		if (i >= cost.length) {
+			return 0;
+		}
+
+		int a = minCostClimbingStairs(cost, i + 1);
+		int b = minCostClimbingStairs(cost, i + 2);
+
+		return Math.min(a, b) + cost[i];
+
+	}
+
+}

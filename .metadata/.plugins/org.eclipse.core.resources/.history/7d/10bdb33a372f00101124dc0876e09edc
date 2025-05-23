@@ -1,0 +1,15 @@
+package com.mydp.thirdVideo;
+
+public class Lcs {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		String text1 = "abcde", text2 = "ace";
+
+	}
+
+	public static int longestCommonSubsequence(String text1, String text2) {
+
+	}
+
+}

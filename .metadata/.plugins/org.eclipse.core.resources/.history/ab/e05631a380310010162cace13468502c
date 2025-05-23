@@ -1,0 +1,24 @@
+package com.mydp.fourthVideo;
+
+public class wine_problem {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int[] nums = { 2, 3, 5, 1, 4 };
+		System.out.println(wineproblem(nums, 0, 0, 1));
+
+	}
+
+	public static int wineproblem(int[] nums, int i, int j, int year) {
+
+		if (i > j) {
+			return 0;
+		}
+
+		int left = wineproblem(nums, i + 1, j, year + 1);
+		int right = wineproblem(nums, i, j-1, year + 1);
+
+		return Math.max(left, right);
+
+	}
+}
